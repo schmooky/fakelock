@@ -48,3 +48,12 @@ const playFn = (): void => {
 
 // Add the event listener for user interaction
 document.body.addEventListener('touchend', playFn);
+
+setInterval(() => {
+  const event = new MouseEvent('mousemove', { bubbles: true });
+  document.dispatchEvent(event);
+}, 5000); // Trigger a fake mouse movement every 5 seconds
+
+navigator.wakeLock.request("screen").catch(err => {
+  console.error("Wake-lock request failed", err);
+});
