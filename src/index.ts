@@ -6,6 +6,7 @@ document.addEventListener(
     function enableNoSleep() {
       document.removeEventListener('click', enableNoSleep, false);
       noSleep.enable();
+      document.getElementById('fake-lock-status')!.style.visibility = 'unset';
     },
     false,
   );
